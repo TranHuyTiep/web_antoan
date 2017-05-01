@@ -13,7 +13,6 @@ var app = express();
 var login = require('./routes/admin/login');
 var catalog_admin = require('./routes/admin/catalog')
 var homeAdmin = require('./routes/admin/home')
-var users = require('./routes/users');
 var home = require('./routes/home');
 
 var adim = [login]
@@ -44,12 +43,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./config/passport')(passport);
 
 app.use('/admin', [adim,catalog_admin,homeAdmin]);
-app.use('/', [users,home]);
+app.use('/', [home]);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
+    res.render('error', {
+        fullUrl: fullUrl,
+    });
   next(err);
 });
 
