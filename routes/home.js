@@ -8,7 +8,7 @@ var detail = require('../model/admin/detail')
 var router = express.Router();
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
+router.get(['/home','/'], function(req, res, next) {
     var fullUrl = helper.fullUrl(req);
     var data  = {};
     detail.getAll(function (error,result) {
