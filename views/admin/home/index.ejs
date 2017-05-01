@@ -1,0 +1,105 @@
+<!-- Right side -->
+<div id="rightSide">
+
+	<!-- Account panel top -->
+    <%-include ../top_header.ejs%>
+	<!-- Main content -->
+	<!-- Common -->
+	<!-- Title area -->
+	<div class="titleArea">
+		<div class="wrapper">
+			<div class="pageTitle">
+				<h5>Danh mục</h5>
+				<span>Quản lý thể loại</span>
+			</div>
+
+			<div class="horControlB menu_action">
+				<ul>
+					<li><a href="/admin/catalog/add">
+							<img src="images/icons/control/16/add.png" />
+							<span>Thêm mới</span>
+						</a></li>
+				</ul>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="line"></div>
+
+	<!-- Message -->
+	<!-- Main content wrapper -->
+	<div class="wrapper">
+		<!-- Static table -->
+		<div class="widget" id='main_content'>
+
+			<div class="title">
+				<h6>Danh sách Danh mục</h6>
+				<div class="num f12">Tổng số: <b><%=data.tong%></b></div>
+                <%catalog = data.data%>
+			</div>
+
+			<table cellpadding="0" cellspacing="0" width="100%" class="sTable mTable myTable taskWidget" id="checkAll">
+				<thead>
+				<tr>
+					<td>Tên</td>
+					<td style="width:150px;">Hành động</td>
+				</tr>
+				</thead>
+
+				<tbody>
+                <% for(var i=0; i<catalog.length; i++) {%>
+				<tr class='row_<%=i%>'>
+
+					<td><%=catalog[i].name%></td>
+					<td class="option">
+						<a href="<%=fullUrl%>/admin/catalog/edit/<%=catalog[i].id%>" title="Chỉnh sửa" class="tipS ">
+							<img src="images/icons/color/edit.png" />
+						</a>
+						<a  href="<%=fullUrl%>/admin/catalog/<%=catalog[i].id%>" target='' class='tipS' title="Xem chi tiết sản phẩm">
+							<img src="<%=fullUrl%>/admin/images/icons/color/view.png" />
+						</a>
+						<a href="<%=fullUrl%>/admin/catalog/delete/<%=catalog[i].id%>" title="Xóa" class="tipS verify_action" >
+							<img src="images/icons/color/delete.png" />
+						</a>
+					</td>
+				</tr>
+                <%}%>
+				</tbody>
+			</table>
+		</div>
+		<div><br></div>
+		<div class="widget" id='main_content2'>
+
+			<div class="title">
+				<h6>Danh sách feedback</h6>
+                <%feedback = data.feedback%>
+			</div>
+
+			<table cellpadding="0" cellspacing="0" width="100%" class="sTable mTable myTable taskWidget" id="checkAll">
+				<thead>
+				<tr>
+					<td>Email</td>
+					<td>Subject</td>
+					<td>message</td>
+				</tr>
+				</thead>
+
+				<tbody>
+                <% for(var i=0; i<feedback.length; i++) {%>
+				<tr class='row_<%=i%>'>
+					<td><%=feedback[i].email%></td>
+					<td><%=feedback[i].subject%></td>
+					<td><%=feedback[i].message%></td>
+				</tr>
+                <%}%>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="clear mt30"></div>
+
+	<!-- Footer -->
+    <%-include ../footer.ejs%>
+</div>
+<div class="clear"></div>

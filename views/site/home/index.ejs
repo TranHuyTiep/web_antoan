@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My web</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:700,300,400">        
+        <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/assets/elegant-font/code/style.css">
+        <link rel="stylesheet" href="/assets/css/animate.css">
+        <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+		<link rel="stylesheet" href="/assets/css/form-elements.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/media-queries.css">
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="/assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+    
+        <!-- Loader -->
+    	<div class="loader">
+    		<div class="loader-img"></div>
+    	</div>
+		
+		<!-- Top menu -->
+		<nav class="navbar navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">
+						<img src="/assets/img/logo.png" class="img-circle" alt="Hình Tròn">
+					</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="scroll-link" href="#top-content">Top</a></li>
+						<li><a class="scroll-link" href="#about">Giới thiệu</a></li>
+						<li><a class="scroll-link" href="#what-we-do">Kỹ năng</a></li>
+						<li><a class="scroll-link" href="#portfolio">Kinh nghiệm</a></li>
+						<li><a class="scroll-link" href="#contact">Liên hệ</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+        <!-- Page title -->
+        <div class="page-title top-content">
+            <div class="page-title-text wow fadeInUp">
+            	<h1>Welcome to My site</h1>
+            	<p>I am Huy Tiep!</p>
+            	<div class="page-title-bottom-link">
+            		<a class="big-link-1 btn scroll-link" href="#section">Start now</a>
+            		<a class="big-link-2 btn scroll-link" href="#what-we-do">Learn more</a>
+            	</div>
+            </div>
+        </div>
+
+		<!-- Block 2 (team member) -->
+		<div class="block-2-container about-container about-block-2-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 block-2-box block-2-left block-2-media wow fadeInLeft">
+						<div class="block-2-img-container">
+							<img src="/assets/img/about/infor.jpg" alt="" data-at2x="assets/img/about/infor.jpg">
+							<div class="img-container-line line-1"></div>
+							<div class="img-container-line line-2"></div>
+							<div class="img-container-line line-3"></div>
+						</div>
+					</div>
+					<div class="col-sm-8 block-2-box block-2-right wow fadeInUp">
+						<h3>Thông tin cá nhân<span></span></h3>
+
+						<%for(var i = 0;i<data.length;i++){%>
+						<%if(data[i].catalog_id==1){%>
+						<p>
+							<%=data[i].name%>
+						</p>
+						<%}}%>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Contact us (block 2) -->
+		<!-- Block 2 -->
+		<div class="block-2-container port-container section-container-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 block-2-box block-2-left wow fadeInLeft">
+						<h3>Sở thích</h3>
+						<ul>
+                            <%for(var i = 0;i<data.length;i++){%>
+                            <%if(data[i].catalog_id==2){%>
+							<li>
+								<span aria-hidden="true" class="icon_plus list-icon"></span>
+                                <%=data[i].name%>
+							</li>
+                            <%}}%>
+						</ul>
+					</div>
+					<div class="col-sm-4 block-2-box block-2-left block-2-media wow fadeInLeft">
+						<div class="block-2-img-container">
+							<img src="/assets/img/about/sothich.jpg" alt="" data-at2x="assets/img/about/sothich.jpg">
+							<div class="img-container-line line-1"></div>
+							<div class="img-container-line line-2"></div>
+							<div class="img-container-line line-3"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- What we do -->
+
+        <div class="block-2-container what-we-do-container">
+	        <div class="container">
+	            <div class="row">
+	            	<div class="col-sm-6 block-2-box block-2-left block-2-media wow fadeInLeft">
+	            		<div class="block-2-img-container">
+	            			<img src="/assets/img/about/4.jpg" alt="" data-at2x="assets/img/about/4.jpg">
+	            			<div class="img-container-line line-1"></div>
+	            			<div class="img-container-line line-2"></div>
+	            			<div class="img-container-line line-3"></div>
+	            		</div>
+	            	</div>
+	            	<div class="col-sm-6 block-2-box block-2-right wow fadeInUp">
+						<h3>Ngôn ngữ</h3>
+						<ul>
+                            <%for(var i = 0;i<data.length;i++){%>
+                            <%if(data[i].catalog_id==3){%>
+							<li>
+								<span aria-hidden="true" class="icon_check list-icon"></span>   <%=data[i].name%>
+							</li>
+                            <%}}%>
+						</ul>
+	            	</div>
+	            </div>
+	        </div>
+        </div>
+        <!-- Block 2 -->
+        <div class="block-2-container portfolio-container section-container-gray ">
+	        <div class="container">
+	            <div class="row">
+	            	<div class="col-sm-6 block-2-box block-2-left wow fadeInLeft ">
+	            		<h3>Kinh nghiệm</h3>
+	            		<ul>
+                            <%for(var i = 0;i<data.length;i++){%>
+                            <%if(data[i].catalog_id==4){%>
+							<li>
+								<span aria-hidden="true" class="icon_check list-icon"></span>
+                                <%=data[i].name%>
+							</li>
+                            <%}}%>
+	            		</ul>
+	            	</div>
+	            	<div class="col-sm-6 block-2-box block-2-right block-2-media wow fadeInUp">
+	            		<div class="block-2-img-container">
+	            			<img src="/assets/img/about/5.jpg" alt="" data-at2x="assets/img/about/5.jpg">
+	            			<div class="img-container-line line-1"></div>
+	            			<div class="img-container-line line-2"></div>
+	            			<div class="img-container-line line-3"></div>
+	            		</div>
+	            	</div>
+	            </div>
+	        </div>
+        </div>
+
+        <div class="block-2-container section-container contact-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 block-2 section-description wow fadeIn">
+	                	<h2>Liên Hệ</h2>
+	                	<div class="divider-1 wow fadeInUp"><span></span></div>
+	                    <p>
+							Bạn có thể liên hệ thông qua số điện thoại hoặc gửi email cho tôi!
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-4 block-2-box block-2-left contact-form wow fadeInLeft">
+	            		<h3>Email</h3>
+	                    <form role="form" action="" method="post">
+	                    	<div class="form-group">
+	                    		<label class="sr-only" for="contact-email">Email</label>
+	                        	<input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">
+	                        </div>
+	                        <div class="form-group">
+	                        	<label class="sr-only" for="contact-subject">Subject</label>
+	                        	<input type="text" name="subject" placeholder="Subject..." class="contact-subject form-control" id="contact-subject">
+	                        </div>
+	                        <div class="form-group">
+	                        	<label class="sr-only" for="contact-message">Message</label>
+	                        	<textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
+	                        </div>
+	                        <button type="submit" class="btn">Send it</button>
+	                    </form>
+	            	</div>
+	            	<div class="col-sm-4 block-2-box block-2-right contact-address wow fadeInUp">
+	            		<h3>Thông tin liên lạc</h3>
+	                    <p><span aria-hidden="true" class="icon_pin"></span>Hà Nội</p>
+	                    <p><span aria-hidden="true" class="icon_phone"></span>Phone: 01663335020</p>
+	                    <p><span aria-hidden="true" class="icon_mail"></span>Email: <a href="">tranhuytiep95@gmail.com</a></p>
+	            	</div>
+	            </div>
+	            <div class="contact-icon-container">
+            		<span aria-hidden="true" class="icon_mail"></span>
+            	</div>
+	        </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+	        <div class="container">
+	        	<div class="row">
+		        	<div class="col-sm-12">
+		        		<div class="scroll-to-top">
+		        			<a href="#"><i class="fa fa-chevron-up"></i></a>
+		        		</div>
+		        	</div>
+		        </div>
+	            <div class="row">
+                    <div class="col-sm-7 footer-copyright">
+                    	&copy; Design <a href="">Huy Tiệp</a>.
+                    </div>
+                    <div class="col-sm-5 footer-social">
+                    	<a href="#"><i class="fa fa-facebook"></i></a>
+	                	<a href="#"><i class="fa fa-dribbble"></i></a>
+	                    <a href="#"><i class="fa fa-twitter"></i></a>
+	                    <a href="#"><i class="fa fa-google-plus"></i></a>
+	                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+	            </div>
+	        </div>
+        </footer>
+        
+
+        <!-- Javascript -->
+        <script src="/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/assets/js/jquery.backstretch.min.js"></script>
+        <script src="/assets/js/wow.min.js"></script>
+        <script src="/assets/js/retina-1.1.0.min.js"></script>
+        <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="/assets/js/waypoints.min.js"></script>
+        <script src="/assets/js/jquery.countTo.js"></script>
+        <script src="/assets/js/masonry.pkgd.min.js"></script>
+        <script src="/assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+        <![endif]-->
+		<script>
+            $(document).ready( function() {
+                $('.btn').click(function () {
+                    var email = $('.contact-email').val()
+                    var subject = $('.contact-subject').val()
+                    var message = $('.contact-message').val()
+                    if(email&&message){
+                        $.ajax({
+                            url:"<%=fullUrl%>/home",
+                            type:"post",
+                            dataType:"json",
+                            data : {email:email,subject:subject,message:message},
+                            success:function (result) {
+                                if(result==1){
+                                    alert('Đã gửi thành công!!')
+                                }
+                                if(result==2){
+                                    alert('Loi!!')
+                                }
+                                if(result==3){
+                                    alert('Loi Email!!')
+                                }
+                            }
+                        })
+                    }
+                })
+            })
+		</script>
+
+    </body>
+
+</html>

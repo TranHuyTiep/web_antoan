@@ -1,0 +1,121 @@
+	<!-- Right side -->
+	<div id="rightSide">
+
+		<script type="text/javascript">
+(function($)
+{
+	$(document).ready(function()
+	{
+		var main = $('#form');
+
+		// Tabs
+		main.contentTabs();
+	});
+})(jQuery);
+</script>
+		<div class="titleArea">
+			<div class="wrapper">
+				<div class="pageTitle">
+			<h5>Thêm mới danh mục</h5>
+			<span></span>
+		</div>
+				<div class="horControlB menu_action">
+			<ul>
+				<li>
+					<a href="<%=fullUrl%>/admin/catalog/<%=data.catalog_id%>">
+						<img src="<%=fullUrl%>/admin/images/icons/control/16/list.png" />
+						<span>Danh sách</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="line"></div>
+<!-- Main content wrapper -->
+		<div class="wrapper">
+	   	<!-- Form -->
+		<form class="form" id="form">
+			<fieldset>
+				<div class="widget">
+				    <div class="title">
+						<img src="<%=fullUrl%>/admin/images/icons/dark/add.png" class="titleIcon" />
+						<h6>Thêm mới danh mục</h6>
+					</div>
+
+				    <ul class="tabs">
+		                <li><a href="#tab1">Thông tin chung</a></li>
+					</ul>
+
+					<div class="tab_container">
+					     <div id='tab1' class="tab_content pd0">
+					         <div class="formRow">
+								<label class="formLeft" for="param_name">Tên:<span class="req">*</span></label>
+								<div class="formRight">
+									<span class="oneTwo">
+										<input name="name" class="name" id="param_name" _autocheck="true" type="text"
+										value="<%=data.name%>"/>
+									</span>
+									<span name="name_autocheck" class="autocheck"></span>
+									<div name="name_error" class="clear error"></div>
+								</div>
+								<div class="clear"></div>
+							 </div>
+							 <div class="formRow hide"></div>
+						 </div>
+	        		</div><!-- End tab_container-->
+	        		<div class="formSubmit">
+	           			<input type="submit" value="Lưu" class="redB" />
+	           			<input type="reset" value="Hủy bỏ" class="basic" />
+	           		</div>
+	        		<div class="clear"></div>
+				</div>
+			</fieldset>
+		</form>
+</div>
+		<div class="clear mt30"></div>
+
+	    <!-- Footer -->
+	</div>
+	<div class="clear"></div>
+	<style>
+		@import url("<%=fullUrl%>/javascripts/font-awesome/css/font-awesome.css");
+		/*
+            FORM STYLING
+        */
+
+		#upload-file-selector,#upload-file-selector1 {
+			display:none;
+		}
+		.margin-correction {
+			margin-right: 10px;
+		}
+
+		.icon-upload-alt{
+			font-size: 17px;
+		}
+		.btn-default{
+			margin-top: 2px;
+		}
+	</style>
+	<script>
+        $(document).ready( function() {
+            $('.redB').click(function () {
+                var name = $('.name').val()
+                if(name){
+                    $.ajax({
+                        url:"<%=fullUrl%>/admin/catalog/detail/edit",
+                        type:"post",
+                        dataType:"json",
+                        data : {name:name,id:'<%=id%>'},
+                        success:function (result) {
+                             if(result==2){
+                                alert('Loi!!')
+                            }
+                        }
+                    })
+                }
+            })
+        })
+	</script>
