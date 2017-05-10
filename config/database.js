@@ -8,7 +8,7 @@ var connection =  mysql.createConnection({
     password:'f0df253f',
     database:'heroku_672101368c931b9',
 })
-connection.connect();
+// connection.connect();
 
 // function handleDisconnect() {
 //     connection = mysql.createConnection(db_config); // Recreate the connection, since
@@ -32,4 +32,19 @@ connection.connect();
 // }
 //
 // handleDisconnect();
-module.exports = connection;
+// module.exports = connection;
+connection.connect(function(err) {
+    if (err) {
+        console.log("SQL CONNECT ERROR: " + err);
+    } else {
+        console.log("SQL CONNECT SUCCESSFUL.");
+    }
+});
+connection.on("close", function (err) {
+    console.log("SQL CONNECTION CLOSED.");
+});
+connection.on("error", function (err) {
+    console.log("SQL CONNECTION ERROR: " + err);
+});
+module.exports.connection = connection;
+// return module.exports.connection;
